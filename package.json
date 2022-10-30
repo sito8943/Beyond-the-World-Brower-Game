@@ -1,0 +1,54 @@
+{
+  "dependencies": {
+    "@emotion/css": "^11.10.5",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "axios": "^1.1.3",
+    "env-cmd": "^10.1.0",
+    "md5": "^2.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.21.0",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.0.2",
+    "react-scripts": "^5.0.1",
+    "sito-container": "^0.4.1",
+    "sito-image": "^0.13.1",
+    "sito-mui-tab-view": "^0.5.2",
+    "socket.io-client": "^4.5.3"
+  },
+  "packageManager": "yarn@3.1.0",
+  "scripts": {
+    "start": "env-cmd -f .env react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "name": "app-template",
+  "version": "0.1.1",
+  "description": "React App Template with: SignIn, Signup and Forgot",
+  "main": "index.js",
+  "repository": "https://github.com/SitoNumbis/App-Template.git",
+  "keywords": [
+    "auth",
+    "react"
+  ]
+}
