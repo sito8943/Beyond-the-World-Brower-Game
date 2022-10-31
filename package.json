@@ -45,7 +45,7 @@
     ]
   },
   "name": "app-template",
-  "version": "0.1.1",
+  "version": "0.2.9",
   "description": "React Beyond the World with: SignIn, Signup and Forgot",
   "main": "index.js",
   "repository": "https://github.com/SitoNumbis/App-Template.git",
