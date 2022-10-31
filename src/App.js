@@ -15,14 +15,19 @@ import SignOut from "./views/Auth/SignOut";
 import NotFound from "./views/NotFound/NotFound";
 
 // context
+import { useUser } from "./context/UserProvider";
 import { useMode } from "./context/ModeProvider";
 
 // theme
 import light from "./assets/theme/light";
 import dark from "./assets/theme/dark";
 
+// for test
+import { NationsEnum } from "./models/Nations";
+
 const App = () => {
   const { modeState } = useMode();
+  const { setUserState } = useUser();
 
   useEffect(() => {
     document.body.style.background =
@@ -30,6 +35,16 @@ const App = () => {
         ? dark.palette.background.screen
         : light.palette.background.screen;
   }, [modeState]);
+
+  useEffect(() => {
+    setUserState({
+      type: "set",
+      user: "Sito",
+      resources: NationsEnum.R2FyZGVuIFBhcmsncyBCYW5kaXQgQm95cw.Currencies.map(
+        (item) => 0
+      ),
+    });
+  }, []);
 
   return (
     <SitoContainer
@@ -39,6 +54,9 @@ const App = () => {
         ...modeState.palette.font,
         hr: modeState.palette.hr,
         a: modeState.palette.a,
+        "& .navbar": {
+          background: modeState.palette.background.sidebar,
+        },
         "& .sidebar": {
           background: modeState.palette.background.sidebar,
         },

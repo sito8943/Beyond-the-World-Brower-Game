@@ -5,6 +5,7 @@ import "@fontsource/josefin-sans";
 import "@fontsource/lexend-deca";
 
 // context
+import { UserProvider } from "./context/UserProvider";
 import { ModeProvider } from "./context/ModeProvider";
 import { LanguageProvider } from "./context/LanguageProvider";
 import { NotificationProvider } from "./context/NotificationProvider";
@@ -24,12 +25,14 @@ const container = document.getElementById("root");
 const root = ReactDOMClient.createRoot(container);
 
 root.render(
-  <LanguageProvider>
-    <ModeProvider>
-      <NotificationProvider>
-        <Notification />
-        <App />
-      </NotificationProvider>
-    </ModeProvider>
-  </LanguageProvider>
+  <UserProvider>
+    <LanguageProvider>
+      <ModeProvider>
+        <NotificationProvider>
+          <Notification />
+          <App />
+        </NotificationProvider>
+      </ModeProvider>
+    </LanguageProvider>
+  </UserProvider>
 );
