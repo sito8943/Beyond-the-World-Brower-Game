@@ -14,11 +14,14 @@ const Main = () => {
 
   return (
     <SitoContainer
-      sx={{ width: "100vw", height: "100vh", flexDirection: "column" }}
+      flexDirection="column"
+      sx={{ width: "100vw", height: "100vh" }}
     >
       <Navbar />
-      <Sidebar open={showSidebar} handleClose={() => setShowSidebar(false)} />
-      <Outlet />
+      <SitoContainer sx={{ width: "100%", height: "100%" }}>
+        <Sidebar open={showSidebar} handleClose={() => setShowSidebar(false)} />
+        <Outlet />
+      </SitoContainer>
       <Footer />
     </SitoContainer>
   );
