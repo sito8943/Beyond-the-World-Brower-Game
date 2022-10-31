@@ -14,29 +14,27 @@ const Navbar = () => {
 
   return (
     <SitoContainer
+      className="navbar"
       alignItems="center"
       sx={{
         height: "100px",
         width: "100%",
-        marginBottom: "10px",
-        marginTop: "10px",
+        padding: "10px 0",
       }}
     >
       <SitoContainer
         sx={{
-          width: "48px",
-          height: "48px",
-
+          minWidth: "48px",
+          minHeight: "48px",
           borderRadius: "100%",
           background: "red",
           marginRight: "10px",
-          marginLeft: "10px",
+          marginLeft: "20px",
         }}
       ></SitoContainer>
       <SitoContainer
         justifyContent="flex-end"
         alignItems="center"
-        className="navbar"
         sx={{ width: "100%", padding: "10px 20px", gap: "30px" }}
       >
         {test.map((item, i) => (
