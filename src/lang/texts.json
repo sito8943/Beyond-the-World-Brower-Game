@@ -6,7 +6,7 @@
       "Links": [
         {
           "Label": "Fortaleza",
-          "Link": "/fortress"
+          "Link": "/"
         },
         {
           "Label": "Recursos",
@@ -14,7 +14,7 @@
         },
         {
           "Label": "Edificios",
-          "Link": "/building"
+          "Link": "/buildings"
         },
         {
           "Label": "Tropas",
@@ -22,7 +22,7 @@
         },
         {
           "Label": "Tecnología",
-          "Link": "/technology"
+          "Link": "/technologies"
         },
         {
           "Label": "Héroes",

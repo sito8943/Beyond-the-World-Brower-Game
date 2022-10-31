@@ -8,11 +8,20 @@ import SitoContainer from "sito-container";
 import Main from "./layouts/Main";
 
 // views
-import Home from "./views/Home/Home";
 import SignUp from "./views/Auth/SignUp";
 import SignIn from "./views/Auth/SignIn";
 import SignOut from "./views/Auth/SignOut";
 import NotFound from "./views/NotFound/NotFound";
+// home views
+import Fortress from "./views/Home/Fortress";
+import Resources from "./views/Home/Resources";
+import Building from "./views/Home/Building";
+import Troops from "./views/Home/Troops";
+import Technologies from "./views/Home/Technologies";
+import Heros from "./views/Home/Heros";
+import Market from "./views/Home/Market";
+import Profile from "./views/Home/Profile";
+import Settings from "./views/Home/Settings";
 
 // context
 import { useUser } from "./context/UserProvider";
@@ -65,7 +74,15 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}>
-            <Route index element={<Home />} />
+            <Route index element={<Fortress />} />
+            <Route exact path="/resources" element={<Resources />} />
+            <Route exact path="/buildings" element={<Building />} />
+            <Route exact path="/troops" element={<Troops />} />
+            <Route exact path="/technologies" element={<Technologies />} />
+            <Route exact path="/heros" element={<Heros />} />
+            <Route exact path="/market" element={<Market />} />
+            <Route exact path="/profile" element={<Profile />} />
+            <Route exact path="/settings" element={<Settings />} />
           </Route>
           <Route path="/auth" element={<></>}>
             <Route index="index" element={<SignIn />} />
