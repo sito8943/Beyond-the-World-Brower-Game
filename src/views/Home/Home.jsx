@@ -1,7 +1,14 @@
-import React from "react";
+import { useState } from "react";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 const Home = () => {
-  return <div></div>;
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  return (
+    <div>
+      <Sidebar open={showSidebar} handleClose={() => setShowSidebar(false)} />
+    </div>
+  );
 };
 
 export default Home;
