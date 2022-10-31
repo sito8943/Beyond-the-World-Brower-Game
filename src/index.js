@@ -1,5 +1,9 @@
 import * as ReactDOMClient from "react-dom/client";
 
+// font
+import "@fontsource/josefin-sans";
+import "@fontsource/lexend-deca";
+
 // context
 import { ModeProvider } from "./context/ModeProvider";
 import { LanguageProvider } from "./context/LanguageProvider";
