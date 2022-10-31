@@ -33,7 +33,7 @@ export class Price {
   }
 
   get Currency() {
-    return this.Currency;
+    return this.currency;
   }
 
   get Count() {
