@@ -21,14 +21,21 @@ const notificationReducer = (notificationState, action) => {
 };
 
 const NotificationProvider = ({ children }) => {
-  const [notificationState, setNotificationState] = React.useReducer(notificationReducer, {
-    visible: false,
-    type: "success",
-    message: "message",
-  });
+  const [notificationState, setNotificationState] = React.useReducer(
+    notificationReducer,
+    {
+      visible: false,
+      type: "success",
+      message: "message",
+    }
+  );
 
   const value = { notificationState, setNotificationState };
-  return <NotificationContext.Provider value={value}>{children}</NotificationContext.Provider>;
+  return (
+    <NotificationContext.Provider value={value}>
+      {children}
+    </NotificationContext.Provider>
+  );
 };
 
 NotificationProvider.propTypes = {
@@ -38,7 +45,8 @@ NotificationProvider.propTypes = {
 // hooks
 const useNotification = () => {
   const context = React.useContext(NotificationContext);
-  if (context === undefined) throw new Error("notificationContext must be used within a Provider");
+  if (context === undefined)
+    throw new Error("notificationContext must be used within a Provider");
   return context;
 };
 

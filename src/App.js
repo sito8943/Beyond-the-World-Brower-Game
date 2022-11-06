@@ -6,6 +6,7 @@ import SitoContainer from "sito-container";
 
 // layouts
 import Main from "./layouts/Main";
+import Empty from "./layouts/Empty";
 
 // views
 import SignUp from "./views/Auth/SignUp";
@@ -87,8 +88,8 @@ const App = () => {
             <Route exact path="/profile" element={<Profile />} />
             <Route exact path="/settings" element={<Settings />} />
           </Route>
-          <Route path="/auth" element={<></>}>
-            <Route index="index" element={<SignIn />} />
+          <Route path="/auth" element={<Empty />}>
+            <Route index element={<SignIn />} />
             <Route exact path="/auth/sign-up" element={<SignUp />} />
             <Route exact path="/auth/sign-out" element={<SignOut />} />
           </Route>

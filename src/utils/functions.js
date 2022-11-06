@@ -1,3 +1,5 @@
+import config from "../config";
+
 /**
  * Find the first upper case letter in a string.
  * @param {string} str - The string to search through.

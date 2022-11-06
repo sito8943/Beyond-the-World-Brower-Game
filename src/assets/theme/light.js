@@ -17,8 +17,10 @@ const palette = {
     h5: { color: "#222222", fontFamily: "Lexend Deca, sans-serif" },
     p: { color: "#222222", fontFamily: "Lexend Deca, sans-serif" },
     span: { color: "#222222", fontFamily: "Lexend Deca, sans-serif" },
+    label: { color: "#222222", fontFamily: "Lexend Deca, sans-serif" },
   },
   a: {
+    fontSize: "12px",
     color: "#222222",
     "&:hover": {
       color: "#222333",
@@ -36,7 +38,7 @@ const palette = {
   button: {
     cursor: "pointer",
     border: "none",
-    borderRadius: "14px",
+    padding: "7px 12px",
     fontWeight: "bold",
     color: "#222333",
     background: "#DF7D6D",

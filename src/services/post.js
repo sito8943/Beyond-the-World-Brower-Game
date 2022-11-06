@@ -11,7 +11,7 @@ import config from "../config";
 
 // functions
 // @ts-ignore
-import { getCookie } from "utils/auth";
+import { getCookie } from "../utils/functions";
 
 export const validateBasicKey = async () => {
   const response = await axios.post(

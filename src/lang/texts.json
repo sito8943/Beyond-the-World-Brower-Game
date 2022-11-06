@@ -47,6 +47,53 @@
           "Link": "/sign-out"
         }
       ]
-    }
+    },
+    "SignIn": {
+      "Title": "Iniciar sesión",
+      "Inputs": [
+        {
+          "id": "user",
+          "label": "Nombre de usuario o email",
+          "type": "text",
+          "placeholder": "ej: perez88"
+        },
+        {
+          "id": "password",
+          "label": "Contraseña",
+          "type": "password",
+          "placeholder": "ej: ********"
+        }
+      ],
+      "Buttons": [
+        { "text": "Acceder", "type": "submit" },
+        { "text": "Registrarse", "type": "button" }
+      ],
+      "LinkRecover": "¿Has olvidado tu contraseña?"
+    },
+    "SignUp": {
+      "Title": "Registrarse",
+      "Inputs": [
+        {
+          "id": "user",
+          "label": "Nombre de usuario o email",
+          "type": "email",
+          "placeholder": "ej: perez88"
+        },
+        {
+          "id": "password",
+          "label": "Contraseña",
+          "type": "password",
+          "placeholder": "ej: ********"
+        },
+        {
+          "id": "repassword",
+          "label": "Rep. Contraseña",
+          "type": "password",
+          "placeholder": "ej: ********"
+        }
+      ],
+      "Buttons": [{ "text": "Registrarse", "type": "submit" }]
+    },
+    "Errors": { "DifferentPassword": "Las contraseñas no coinciden" }
   }
 }
