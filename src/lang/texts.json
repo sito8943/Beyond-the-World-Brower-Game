@@ -1,0 +1,52 @@
+{
+  "es": {
+    "Sidebar": {
+      "Title": "Beyond the World",
+      "Subtitle": "en el navegador",
+      "Links": [
+        {
+          "Label": "Fortaleza",
+          "Link": "/"
+        },
+        {
+          "Label": "Recursos",
+          "Link": "/resources"
+        },
+        {
+          "Label": "Edificios",
+          "Link": "/buildings"
+        },
+        {
+          "Label": "Tropas",
+          "Link": "/troops"
+        },
+        {
+          "Label": "Tecnología",
+          "Link": "/technologies"
+        },
+        {
+          "Label": "Héroes",
+          "Link": "/heros"
+        },
+        {
+          "Label": "Mercado",
+          "Link": "/market"
+        }
+      ],
+      "Player": [
+        {
+          "Label": "Perfil",
+          "Link": "/profile"
+        },
+        {
+          "Label": "Ajustes",
+          "Link": "/settings"
+        },
+        {
+          "Label": "Cerrar sesión",
+          "Link": "/sign-out"
+        }
+      ]
+    }
+  }
+}
