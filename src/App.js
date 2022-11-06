@@ -63,6 +63,9 @@ const App = () => {
         ...modeState.palette.font,
         hr: modeState.palette.hr,
         a: modeState.palette.a,
+        button: modeState.palette.button,
+        "& .primary": modeState["& .primary"],
+        "& .secondary": modeState["& .secondary"],
         "& .navbar": {
           background: modeState.palette.background.sidebar,
         },

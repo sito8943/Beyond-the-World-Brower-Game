@@ -1,4 +1,14 @@
 const palette = {
+  primary: {
+    light: "#FFB563",
+    main: "#DF7D6D",
+    dark: "#A2586F",
+  },
+  secondary: {
+    light: "#5CECC0",
+    main: "#00B38A",
+    dark: "#007D58",
+  },
   font: {
     h1: { color: "#222333", fontFamily: "Josefin Sans, sans-serif" },
     h2: { color: "#222333", fontFamily: "Josefin Sans, sans-serif" },
@@ -22,6 +32,31 @@ const palette = {
   background: {
     screen: "#fff",
     sidebar: "#eee",
+  },
+  button: {
+    cursor: "pointer",
+    border: "none",
+    borderRadius: "14px",
+    fontWeight: "bold",
+    color: "#222333",
+    background: "#DF7D6D",
+    "&: hover": {
+      background: "#A2586F",
+    },
+  },
+  "& .primary": {
+    color: "#222333",
+    background: "#DF7D6D",
+    "&: hover": {
+      background: "#A2586F",
+    },
+  },
+  "& .secondary": {
+    color: "#222333",
+    background: "#00B38A",
+    "&: hover": {
+      background: "#007D58",
+    },
   },
 };
 
