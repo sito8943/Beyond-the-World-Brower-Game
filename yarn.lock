@@ -1319,6 +1319,19 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+<<<<<<< HEAD
+=======
+"@fontsource/josefin-sans@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/josefin-sans/-/josefin-sans-4.5.11.tgz#46d6fc02d1fed992c68df599132871f65fc412d5"
+  integrity sha512-3JvalsdOJc1XfERcarGsVMFOnPcWTQgMVzptnpg8pT27Al4g16Nj7S0nA4VSkIkyYoPArHGas2n7b1vu3pBHnA==
+
+"@fontsource/lexend-deca@^4.5.12":
+  version "4.5.12"
+  resolved "https://registry.yarnpkg.com/@fontsource/lexend-deca/-/lexend-deca-4.5.12.tgz#dc368ff091f004d0e4256075cbe8bc01a291a7f7"
+  integrity sha512-s2YGWrMlrthMU0zV9JlB1a/Bjy6C8cWXJYkz0KTmNO3rN3LOYwm4H4bLFRkZaqw+LoNrivm8uMS0AtdmDTp6xg==
+
+>>>>>>> doom970118
 "@humanwhocodes/config-array@^0.11.6":
   version "0.11.7"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.7.tgz#38aec044c6c828f6ed51d5d7ae3d9b9faf6dbb0f"

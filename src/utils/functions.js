@@ -1,3 +1,5 @@
+import config from "../config";
+
 /**
  * Find the first upper case letter in a string.
  * @param {string} str - The string to search through.
@@ -39,13 +41,13 @@ export const findFirstLowerLetter = (str) => {
  * @param {string} user - the user's email address
  * @returns {number} error type, -1 if everything is ok
  *
- * - 0 The password must be between 8 and 12 characters long.
+ * - 0 The password must be between 8 and 25 characters long.
  * - 1 The password must contain at least one upper case letter, one lower case letter, and one number.
  * - 2 The password must not contain the user's name
  */
 export const passwordValidation = (password, user) => {
   // validating password length
-  if (password.length < 8 || password.length > 12) return 0;
+  if (password.length < 8 || password.length > 25) return 0;
   // validating password special characters
   if (
     findFirstUpperLetter(password) === -1 ||

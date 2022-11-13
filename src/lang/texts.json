@@ -1,3 +1,99 @@
 {
-  "es": {}
+  "es": {
+    "Sidebar": {
+      "Title": "Beyond the World",
+      "Subtitle": "en el navegador",
+      "Links": [
+        {
+          "Label": "Fortaleza",
+          "Link": "/"
+        },
+        {
+          "Label": "Recursos",
+          "Link": "/resources"
+        },
+        {
+          "Label": "Edificios",
+          "Link": "/buildings"
+        },
+        {
+          "Label": "Tropas",
+          "Link": "/troops"
+        },
+        {
+          "Label": "Tecnología",
+          "Link": "/technologies"
+        },
+        {
+          "Label": "Héroes",
+          "Link": "/heros"
+        },
+        {
+          "Label": "Mercado",
+          "Link": "/market"
+        }
+      ],
+      "Player": [
+        {
+          "Label": "Perfil",
+          "Link": "/profile"
+        },
+        {
+          "Label": "Ajustes",
+          "Link": "/settings"
+        },
+        {
+          "Label": "Cerrar sesión",
+          "Link": "/sign-out"
+        }
+      ]
+    },
+    "SignIn": {
+      "Title": "Iniciar sesión",
+      "Inputs": [
+        {
+          "id": "user",
+          "label": "Nombre de usuario o email",
+          "type": "text",
+          "placeholder": "ej: perez88"
+        },
+        {
+          "id": "password",
+          "label": "Contraseña",
+          "type": "password",
+          "placeholder": "ej: ********"
+        }
+      ],
+      "Buttons": [
+        { "text": "Acceder", "type": "submit" },
+        { "text": "Registrarse", "type": "button" }
+      ],
+      "LinkRecover": "¿Has olvidado tu contraseña?"
+    },
+    "SignUp": {
+      "Title": "Registrarse",
+      "Inputs": [
+        {
+          "id": "user",
+          "label": "Nombre de usuario o email",
+          "type": "email",
+          "placeholder": "ej: perez88"
+        },
+        {
+          "id": "password",
+          "label": "Contraseña",
+          "type": "password",
+          "placeholder": "ej: ********"
+        },
+        {
+          "id": "repassword",
+          "label": "Rep. Contraseña",
+          "type": "password",
+          "placeholder": "ej: ********"
+        }
+      ],
+      "Buttons": [{ "text": "Registrarse", "type": "submit" }]
+    },
+    "Errors": { "DifferentPassword": "Las contraseñas no coinciden" }
+  }
 }
