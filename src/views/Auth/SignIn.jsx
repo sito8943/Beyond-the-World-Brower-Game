@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 // sito-components
@@ -6,6 +7,9 @@ import SitoContainer from "sito-container";
 
 // @emotion/css
 import { css } from "@emotion/css";
+
+//own components
+import Loading from "../../components/Loading/Section";
 
 // contexts
 import { useLanguage } from "../../context/LanguageProvider";
@@ -16,6 +20,7 @@ import { login } from "../../services/post";
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const { languageState } = useLanguage();
   const { setNotificationState } = useNotification();
 
@@ -26,6 +31,7 @@ const SignIn = () => {
 
   const onSubmit = async (d) => {
     const { user, password } = d;
+    setLoading(true);
     try {
       const response = await login(user, password);
       console.log(response);
@@ -37,6 +43,7 @@ const SignIn = () => {
         languageState.texts.Errors[error.response.data.error]
       );
     }
+    setLoading(false);
   };
 
   return (
@@ -67,6 +74,7 @@ const SignIn = () => {
         alignItems="center"
         sx={{ height: "100%" }}
       >
+        <Loading visible={loading} />
         <form onSubmit={handleSubmit(onSubmit)}>
           <SitoContainer
             flexDirection="column"

@@ -1,10 +1,14 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 // sito-components
 import SitoContainer from "sito-container";
 
 // @emotion/css
 import { css } from "@emotion/css";
+
+//own components
+import Loading from "../../components/Loading/Section";
 
 // contexts
 import { useLanguage } from "../../context/LanguageProvider";
@@ -15,6 +19,7 @@ import { register as rRegister } from "../../services/post";
 import { passwordValidation } from "../../utils/functions";
 
 const SignUp = () => {
+  const [loading, setLoading] = useState(false);
   const { languageState } = useLanguage();
   const { setNotificationState } = useNotification();
 
@@ -43,6 +48,7 @@ const SignUp = () => {
       console.log(languageState.texts.Errors.DifferentPassword);
       showNotification("error", languageState.texts.Errors.DifferentPassword);
     } else {
+      setLoading(true);
       try {
         const response = await rRegister(user, password);
         const { id, token, expiration } = response.data;
@@ -50,6 +56,7 @@ const SignUp = () => {
         console.log(error);
         showNotification("error", String(error));
       }
+      setLoading(false);
     }
   };
 
@@ -81,6 +88,7 @@ const SignUp = () => {
         alignItems="center"
         sx={{ height: "100%" }}
       >
+        <Loading visible={loading} />
         <form onSubmit={handleSubmit(onSubmit)}>
           <SitoContainer
             flexDirection="column"
