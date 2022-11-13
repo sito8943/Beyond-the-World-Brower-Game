@@ -12,6 +12,7 @@ import { useNotification } from "../../context/NotificationProvider";
 
 // services
 import { register as rRegister } from "../../services/post";
+import { passwordValidation } from "../../utils/functions";
 
 const SignUp = () => {
   const { languageState } = useLanguage();
@@ -24,6 +25,20 @@ const SignUp = () => {
 
   const onSubmit = async (d) => {
     const { user, password, repassword } = d;
+    switch (passwordValidation(password, user)) {
+      case 0:
+        console.log(languageState.texts.Errors.WrongSize);
+        showNotification("error", languageState.texts.Errors.WrongSize);
+        return;
+      case 1:
+        console.log(languageState.texts.Errors.WrongVariability);
+        showNotification("error", languageState.texts.Errors.WrongVariability);
+        return;
+      case 2:
+        console.log(languageState.texts.Errors.LikeUser);
+        showNotification("error", languageState.texts.Errors.LikeUser);
+        return;
+    }
     if (password != repassword) {
       console.log(languageState.texts.Errors.DifferentPassword);
       showNotification("error", languageState.texts.Errors.DifferentPassword);
