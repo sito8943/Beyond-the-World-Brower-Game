@@ -31,8 +31,11 @@ const SignIn = () => {
       console.log(response);
       const { id, token, expiration } = response.data;
     } catch (error) {
-      console.log(error);
-      showNotification("error", String(error));
+      console.log(languageState.texts.Errors[error.response.data.error]);
+      showNotification(
+        "error",
+        languageState.texts.Errors[error.response.data.error]
+      );
     }
   };
 

@@ -98,7 +98,9 @@
       "DifferentPassword": "Las contraseñas no coinciden",
       "WrongSize": "La contraseña debe de tener entre 8 y 25 caracteres",
       "WrongVariability": "La contraseña debe al menos una mayúscula, una minúscula y un número",
-      "EqualUser": "La contraseña no debe contener el nombre del usuario"
+      "EqualUser": "La contraseña no debe contener el nombre del usuario",
+      "WrongPassword": "Usuario o Contraseña incorrecta",
+      "SomeWrong": "Ha ocurrido un error"
     }
   }
 }
