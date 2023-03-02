@@ -12,10 +12,17 @@
 }
 
 .bottom-bar {
-  height: 20px;
+  height: 40px;
+}
+
+.end-turn {
+  margin-top: -30px;
+  font-size: 40px;
+  width: 60px !important;
+  height: 60px !important;
 }
 
 .bordered {
   border: 1px dashed;
-  @apply border-secondary;
+  @apply border-dark-primary;
 }

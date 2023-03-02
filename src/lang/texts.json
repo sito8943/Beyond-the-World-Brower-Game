@@ -3,7 +3,8 @@
     "tooltips": {
       "funds": "Fondos",
       "souls": "Almas",
-      "mana": "Maná"
+      "mana": "Maná",
+      "endTurn": "Terminar turno"
     }
   }
 }
