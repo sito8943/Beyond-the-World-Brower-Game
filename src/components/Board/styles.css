@@ -1,0 +1,21 @@
+.cell {
+  width: 60px;
+  height: 60px;
+}
+
+.board {
+  height: calc(100vh - 60px);
+}
+
+.top-bar {
+  height: 40px;
+}
+
+.bottom-bar {
+  height: 20px;
+}
+
+.bordered {
+  border: 1px dashed;
+  @apply border-secondary;
+}

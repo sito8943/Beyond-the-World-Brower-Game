@@ -1,13 +1,171 @@
 import React from "react";
-import Route from "../Route/Route";
 
 // components
+import Row from "./Row";
+import Cell from "./Cell";
+import TopBar from "./TopBar";
+import BottomBar from "./BottomBar";
 import RadialTimerButton from "../TimerButton/Prefab/RadialTimerButton";
+
+// styles
+import "./styles.css";
+
+const field = [
+  [
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+  ],
+  [
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+  ],
+  [
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+  ],
+  [
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+  ],
+  [
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+  ],
+  [
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+  ],
+  [
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+    { type: 2, unit: null, building: null },
+    { type: 1, unit: null, building: null },
+  ],
+];
 
 export default function Board() {
   return (
-    <div className="bg-primary relative w-full h-viewport overflow-auto">
-      <RadialTimerButton
+    <div>
+      <TopBar />
+      <div className="p-10 bg-primary relative w-full board flex items-center justify-center flex-col overflow-auto">
+        {field.map((item) => (
+          <Row>
+            {item.map((jtem) => (
+              <Cell border data={jtem} />
+            ))}
+          </Row>
+        ))}
+        {/* <RadialTimerButton
         position={{ x: 40, y: 60 }}
         action={() => {
           console.log("hola");
@@ -23,7 +181,9 @@ export default function Board() {
         }}
       >
         Casa
-      </RadialTimerButton>
+      </RadialTimerButton> */}
+      </div>
+      <BottomBar />
     </div>
   );
 }
