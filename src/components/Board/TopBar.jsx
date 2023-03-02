@@ -23,11 +23,20 @@ export default function TopBar() {
       <div className="resources gap-3 flex items-center justify-end">
         {userState.user?.nation === Nations.AthensGal ? (
           <>
-            <Dead className="text-white transition hover:bg-dark-primary rounded-circle" />
-            <Funds className="text-white transition hover:bg-dark-primary rounded-circle" />
+            <Dead
+              numberClassName="text-white"
+              className="text-white transition hover:bg-dark-primary rounded-circle"
+            />
+            <Funds
+              numberClassName="text-white"
+              className="text-white transition hover:bg-dark-primary rounded-circle"
+            />
           </>
         ) : null}
-        <Mana className="text-white transition hover:bg-dark-primary rounded-circle" />
+        <Mana
+          numberClassName="text-white"
+          className="text-white transition hover:bg-dark-primary rounded-circle"
+        />
       </div>
     </div>
   );
