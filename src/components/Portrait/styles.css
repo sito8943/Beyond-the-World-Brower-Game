@@ -1,0 +1,6 @@
+.portrait {
+  width: 80px;
+  height: 90px;
+  border: 1px solid;
+  @apply border-light-primary;
+}

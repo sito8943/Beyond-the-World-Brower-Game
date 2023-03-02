@@ -1,10 +1,6 @@
 .cell {
-  width: 60px;
-  height: 60px;
-}
-
-.board {
-  height: calc(100vh - 60px);
+  width: 50px;
+  height: 50px;
 }
 
 .top-bar {
@@ -12,11 +8,11 @@
 }
 
 .bottom-bar {
-  height: 40px;
+  height: 20px;
 }
 
 .end-turn {
-  margin-top: -30px;
+  margin-top: 15px;
   font-size: 40px;
   width: 60px !important;
   height: 60px !important;
