@@ -11,6 +11,10 @@ const QuestsContext = createContext();
 const questsReducer = (questsState, action) => {
   const { type } = action;
   switch (type) {
+    case "init": {
+      const { value } = action;
+      return { quests: value };
+    }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }

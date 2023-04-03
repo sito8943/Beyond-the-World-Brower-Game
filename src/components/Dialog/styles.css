@@ -11,10 +11,15 @@
 }
 
 .quests {
-  width: 250px;
+  width: 300px;
   height: 300px;
   top: 3.8rem;
   @apply left-5;
+}
+
+.quests .diag-content {
+  flex-direction: column;
+  gap: 15px;
 }
 
 .diag-content {

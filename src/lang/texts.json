@@ -8,9 +8,17 @@
     "chapters": {
       "0": {
         "quests": {
-          "quest1": "Explora la zona del bosque",
-          "quest2": "Elimina los demonios de la zona",
-          "quest3": "La escuadra de científicos debe sobrevivir"
+          "0": [
+            { "label": "Explora la zona del bosque", "state": "discovered" },
+            {
+              "label": "Elimina los demonios de la zona",
+              "state": "discovered"
+            },
+            {
+              "label": "La escuadra de científicos debe sobrevivir",
+              "state": "discovered"
+            }
+          ]
         },
         "cinematic": {
           "intro": {

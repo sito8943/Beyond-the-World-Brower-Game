@@ -16,9 +16,9 @@ function Quests({ quests }) {
   return (
     <div className="dialog quests">
       <div className="diag-content">
-        <h4>{questDialog.title}</h4>
+        <h4 className="text-lg">{questDialog.title}</h4>
         {quests.map((item) => (
-          <div key={item.id}>{item.label}</div>
+          <p key={item.id}>{item.label}</p>
         ))}
       </div>
     </div>
