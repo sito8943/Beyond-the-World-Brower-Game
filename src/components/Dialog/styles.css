@@ -27,11 +27,6 @@
   @apply w-full h-full relative p-5;
 }
 
-.diag-content p,
-.diag-content h4 {
-  @apply text-white;
-}
-
 .portrait {
   @apply bg-primary;
 }
@@ -42,4 +37,13 @@
 
 .actions {
   @apply absolute bottom-3 right-5;
+}
+
+.quest-completed {
+  @apply line-through !text-disabled;
+}
+
+.diag-content p,
+.diag-content h4 {
+  @apply text-white;
 }

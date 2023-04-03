@@ -11,6 +11,8 @@ module.exports = {
       "light-secondary": "#00C6C2",
       "dark-secondary": "#004247",
       white: "#f0f0f0",
+      "white-hover": "#c2c7cc",
+      "disabled": "#636362",
       black: "#1b1b1b",
     },
     extend: {

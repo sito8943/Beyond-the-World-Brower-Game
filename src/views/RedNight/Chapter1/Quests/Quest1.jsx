@@ -7,7 +7,7 @@ import React, { useEffect, useMemo } from "react";
 import Quests from "../../../../components/Dialog/Quests";
 
 // contexts
-import { useQuests } from "../../../../contexts/QuestsComponens";
+import { useQuests } from "../../../../contexts/QuestsProvider";
 import { useLanguage } from "../../../../contexts/LanguageProvider";
 
 function Quest1() {
