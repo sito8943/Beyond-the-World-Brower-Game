@@ -4,11 +4,16 @@ import React from "react";
 import Board from "./components/Board/Board";
 import Chapter1 from "./views/RedNight/Chapter1/Chapter1";
 
+// contexts
+import { QuestsProvider } from "./contexts/QuestsComponens";
+
 function App() {
   return (
     <div>
-      <Board />
-      <Chapter1 />
+      <QuestsProvider>
+        <Board />
+        <Chapter1 />
+      </QuestsProvider>
     </div>
   );
 }

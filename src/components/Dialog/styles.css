@@ -14,7 +14,7 @@
   width: 250px;
   height: 300px;
   top: 3.8rem;
-  @apply left-5 top-5;
+  @apply left-5;
 }
 
 .diag-content {
@@ -22,7 +22,8 @@
   @apply w-full h-full relative p-5;
 }
 
-.diag-content p {
+.diag-content p,
+.diag-content h4 {
   @apply text-white;
 }
 

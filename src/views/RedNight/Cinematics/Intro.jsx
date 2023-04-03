@@ -10,7 +10,8 @@ function Intro() {
   const { languageState } = useLanguage();
 
   const chapterCinematic = useMemo(
-    () => languageState.texts.chapters[0].cinematic
+    () => languageState.texts.chapters[0].cinematic,
+    [languageState]
   );
 
   const [currentDialog, setCurrentDialog] = useState(0);

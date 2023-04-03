@@ -6,10 +6,15 @@ import React from "react";
 // dialogs
 import Quests from "../../../../components/Dialog/Quests";
 
+// contexts
+import { useQuests } from "../../../../contexts/QuestsComponens";
+
 function Quest1() {
+  const { questsState } = useQuests();
+
   return (
     <div>
-      <Quests />
+      <Quests quests={questsState.quests} />
     </div>
   );
 }

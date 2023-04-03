@@ -1,5 +1,10 @@
 {
   "es": {
+    "dialogs": {
+      "quests": {
+        "title": "Objetivos"
+      }
+    },
     "chapters": {
       "0": {
         "quests": {
