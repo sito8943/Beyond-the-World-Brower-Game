@@ -1,0 +1,39 @@
+.dialog {
+  z-index: 80;
+  @apply bg-dark-primary rounded-2xl fixed bottom-5;
+}
+
+.message {
+  width: 500px;
+  height: 150px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.quests {
+  width: 250px;
+  height: 300px;
+  top: 3.8rem;
+  @apply left-5 top-5;
+}
+
+.diag-content {
+  display: flex;
+  @apply w-full h-full relative p-5;
+}
+
+.diag-content p {
+  @apply text-white;
+}
+
+.portrait {
+  @apply bg-primary;
+}
+
+.content {
+  @apply flex-1;
+}
+
+.actions {
+  @apply absolute bottom-3 right-5;
+}

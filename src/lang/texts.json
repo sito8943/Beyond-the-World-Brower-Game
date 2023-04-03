@@ -1,5 +1,25 @@
 {
   "es": {
+    "chapters": {
+      "0": {
+        "quests": {
+          "quest1": "Explora la zona del bosque",
+          "quest2": "Elimina los demonios de la zona",
+          "quest3": "La escuadra de científicos debe sobrevivir"
+        },
+        "cinematic": {
+          "intro": {
+            "messages": [
+              {
+                "unit": null,
+                "message": "Un equipo de exploración de  Athens Gal está haciendo su sondeo rutinario de demonios y estudiando sus restos.",
+                "next": 1
+              }
+            ]
+          }
+        }
+      }
+    },
     "tooltips": {
       "funds": "Fondos",
       "souls": "Almas",

@@ -445,13 +445,13 @@ export default function Board() {
       </div>
       <div className="p-10 bg-primary">
         <div className="relative w-full h-viewport board flex items-center justify-center flex-col overflow-auto">
-          {field.map((item) => (
+          {/* field.map((item) => (
             <Row>
               {item.map((jtem) => (
                 <Cell border data={jtem} />
               ))}
             </Row>
-          ))}
+          )) */}
           {/* <RadialTimerButton
         position={{ x: 40, y: 60 }}
         action={() => {
