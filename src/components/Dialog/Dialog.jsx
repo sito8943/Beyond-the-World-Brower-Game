@@ -1,21 +1,66 @@
-import React from "react";
+import React, { memo, useCallback } from "react";
+
+import db from "../../db/db.json";
 
 // @fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faNext } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 // styles
 import "./styles.css";
 
+// utils
+import { parseImageKit } from "../../utils/parser";
+
 const actionIcons = {
-  // next: faNext,
+  next: faArrowCircleRight,
 };
 
+const emptyImage = parseImageKit(
+  "https://ik.imagekit.io/lgqp0wffgtp/Beyon_the_world/Athens_Gal/logo_Z6mtwfeT8.jfif?updatedAt=1682261687287",
+  "80",
+  "110",
+  "110"
+);
+
 function Dialog({ unit, message, action }) {
+  const getUserAlt = useCallback(() => {
+    if (unit.nation && unit.type && unit.name) {
+      if (
+        db[unit.nation] &&
+        db[unit.nation][unit.type] &&
+        db[unit.nation][unit.type][unit.id] &&
+        db[unit.nation][unit.type][unit.id].name
+      )
+        return db[unit.nation][unit.type][unit.id].name.toLowerCase();
+      return "unit-portrait";
+    }
+  }, [unit, db]);
+
+  const getUserPortrait = useCallback(() => {
+    if (
+      db[unit.nation] &&
+      db[unit.nation][unit.type] &&
+      db[unit.nation][unit.type][unit.id] &&
+      db[unit.nation][unit.type][unit.id].portrait
+    )
+      return parseImageKit(
+        db[unit.nation][unit.type][unit.id].portrait,
+        "80",
+        "110",
+        "110"
+      );
+    return emptyImage;
+  }, [unit, db]);
+
   return (
     <div className="dialog message">
       <div className="diag-content">
-        {unit ? <div className="portrait"></div> : null}
+        {unit && unit !== null ? (
+          <div className="diag-portrait">
+            <img src={getUserPortrait()} alt={getUserAlt()} />
+          </div>
+        ) : null}
         {message ? (
           <div className="content">
             <p>{message}</p>
@@ -23,7 +68,10 @@ function Dialog({ unit, message, action }) {
         ) : null}
         {action ? (
           <div className="actions">
-            <button onClick={action.event}>
+            <button
+              onClick={action.event}
+              className="text-xl hover:text-white transition"
+            >
               {actionIcons[action.icon] ? (
                 <FontAwesomeIcon icon={actionIcons[action.icon]} />
               ) : (
@@ -37,4 +85,14 @@ function Dialog({ unit, message, action }) {
   );
 }
 
-export default Dialog;
+const DialogMemo = memo((props) => <Dialog {...props} />, arePropsEqual);
+
+function arePropsEqual(oldProps, newProps) {
+  return (
+    oldProps.unit === oldProps.unit &&
+    oldProps.message === newProps.message &&
+    oldProps.action === newProps.action
+  );
+}
+
+export default DialogMemo;

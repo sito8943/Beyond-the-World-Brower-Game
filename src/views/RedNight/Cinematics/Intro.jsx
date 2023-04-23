@@ -18,17 +18,19 @@ function Intro() {
 
   return (
     <div>
-      <Dialog
-        unit={chapterCinematic.intro.messages[currentDialog].unit}
-        message={chapterCinematic.intro.messages[currentDialog].message}
-        action={{
-          icon: "next",
-          event: () =>
-            setCurrentDialog(
-              chapterCinematic.intro.messages[currentDialog].next
-            ),
-        }}
-      />
+      {chapterCinematic.intro.messages[currentDialog] ? (
+        <Dialog
+          unit={chapterCinematic.intro.messages[currentDialog].unit}
+          message={chapterCinematic.intro.messages[currentDialog].message}
+          action={{
+            icon: "next",
+            event: () =>
+              setCurrentDialog(
+                chapterCinematic.intro.messages[currentDialog].next
+              ),
+          }}
+        />
+      ) : null}
     </div>
   );
 }

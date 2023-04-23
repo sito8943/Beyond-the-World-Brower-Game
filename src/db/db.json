@@ -1,0 +1,14 @@
+{
+  "athensgal": {
+    "units": {
+      "scout": {
+        "name": "Explorador",
+        "portrait": "https://ik.imagekit.io/lgqp0wffgtp/Beyon_the_world/Athens_Gal/Units/Scout_Y9OcRR0ou2.jfif?updatedAt=1682261118376"
+      },
+      "scientist": {
+        "name": "Científico",
+        "portrait": "https://ik.imagekit.io/lgqp0wffgtp/Beyon_the_world/Athens_Gal/Units/Scientist_npD4va5ca.jfif?updatedAt=1682262382995"
+      }
+    }
+  }
+}

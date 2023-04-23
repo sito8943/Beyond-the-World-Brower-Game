@@ -27,6 +27,33 @@
                 "unit": null,
                 "message": "Un equipo de exploración de  Athens Gal está haciendo su sondeo rutinario de demonios y estudiando sus restos.",
                 "next": 1
+              },
+              {
+                "unit": {
+                  "nation": "athensgal",
+                  "type": "units",
+                  "id": "scout"
+                },
+                "message": "Muy bien muchachos hoy nos toca explorar esta zona del bosque.",
+                "next": 2
+              },
+              {
+                "unit": {
+                  "nation": "athensgal",
+                  "type": "units",
+                  "id": "scientist"
+                },
+                "message": "Debemos tener cuidado, estamos cerca de la Ciudadela Negra, no podemos confiarnos.",
+                "next": 3
+              },
+              {
+                "unit": {
+                  "nation": "athensgal",
+                  "type": "units",
+                  "id": "scout"
+                },
+                "message": "No hay problema, acabemos esto rápidamente.",
+                "next": -1
               }
             ]
           }

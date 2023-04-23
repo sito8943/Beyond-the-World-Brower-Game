@@ -4,7 +4,7 @@
 import React, { useEffect, useMemo } from "react";
 
 // dialogs
-import Quests from "../../../../components/Dialog/Quests";
+import Quests from "../../../../components/Quests/Quests";
 
 // contexts
 import { useQuests } from "../../../../contexts/QuestsProvider";
