@@ -6,12 +6,12 @@ import loadable from "@loadable/component";
 import { getUserLanguage } from "some-javascript-utils/browser";
 
 // contexts
-import { useUser } from "./contexts/PlayerProvider";
+import { useUser } from "./contexts/UserProvider";
 import { useLanguage } from "./contexts/LanguageProvider";
 
 // contexts
 import { QuestsProvider } from "./contexts/QuestsProvider";
-import { config } from "@fortawesome/fontawesome-svg-core";
+import { PlayerProvider } from "./contexts/PlayerProvider";
 
 // components
 const Board = loadable(() => import("./components/Board/Board"));
@@ -21,8 +21,14 @@ const Chapter1 = loadable(() => import("./views/RedNight/Chapter1/Chapter1"));
 const Home = loadable(() => import("./views/Home/Home"));
 const Campaign = loadable(() => import("./views/Campaign/Campaign"));
 
+// utils
+import { getUser } from "./utils/local";
+
+// config
+import config from "./config";
+
 function App() {
-  const { setUser } = useUser();
+  const { setUserState } = useUser();
   const { setLanguageState } = useLanguage();
 
   useEffect(() => {
@@ -39,8 +45,8 @@ function App() {
           user: "Sito",
         })
       );
-      const localUser = localStorage.getItem(config.localUser);
-      setUser({ type: "logged-in", user: localUser });
+      const localUser = getUser();
+      if (localUser.id) setUserState({ type: "logged-in", user: localUser });
     } catch (err) {
       console.error(err);
     }
@@ -57,10 +63,12 @@ function App() {
                 exact
                 path="/campaign/chapter1"
                 element={
-                  <QuestsProvider>
-                    <Board />
-                    <Chapter1 />
-                  </QuestsProvider>
+                  <PlayerProvider>
+                    <QuestsProvider>
+                      <Board />
+                      <Chapter1 />
+                    </QuestsProvider>
+                  </PlayerProvider>
                 }
               />
             </Route>

@@ -6,50 +6,52 @@ import React, { createContext, useReducer, useContext } from "react";
 import PropTypes from "prop-types";
 import Nations from "../enum/Nations";
 
-const UserContext = createContext();
+const PlayerContext = createContext();
 
-const userReducer = (userState, action) => {
+const playerReducer = (playerState, action) => {
   const { type } = action;
   switch (type) {
     case "set-resource": {
       const { resourceId, value } = action;
-      const newUser = { ...userState };
-      newUser.resources[resourceId] = newUser.resources[resourceId]
-        ? newUser.resources[resourceId] + value
+      const newPlayer = { ...playerState };
+      newPlayer.resources[resourceId] = newPlayer.resources[resourceId]
+        ? newPlayer.resources[resourceId] + value
         : value;
-      return newUser;
+      return newPlayer;
       break;
     }
     case "logged-out":
       return {};
     case "logged-in": {
-      const { user } = action;
-      return { user };
+      const { player } = action;
+      return { player };
     }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }
 };
 
-const UserProvider = ({ children }) => {
-  const [userState, setUserState] = useReducer(userReducer, {
-    user: { id: "sito", nation: Nations.AthensGal, resources: {} },
+const PlayerProvider = ({ children }) => {
+  const [playerState, setPlayerState] = useReducer(playerReducer, {
+    player: { id: "sito", nation: Nations.AthensGal, resources: {} },
   });
 
-  const value = { userState, setUserState };
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+  const value = { playerState, setPlayerState };
+  return (
+    <PlayerContext.Provider value={value}>{children}</PlayerContext.Provider>
+  );
 };
 
-UserProvider.propTypes = {
+PlayerProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
 // hooks
-const useUser = () => {
-  const context = useContext(UserContext);
+const usePlayer = () => {
+  const context = useContext(PlayerContext);
   if (context === undefined)
-    throw new Error("userContext must be used within a Provider");
+    throw new Error("playerContext must be used within a Provider");
   return context;
 };
 
-export { UserProvider, useUser };
+export { PlayerProvider, usePlayer };

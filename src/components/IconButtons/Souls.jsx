@@ -5,7 +5,7 @@ import Tippy from "@tippyjs/react";
 import { GiDeathSkull } from "react-icons/gi";
 
 // contexts
-import { useUser } from "../../contexts/PlayerProvider";
+import { usePlayer } from "../../contexts/PlayerProvider";
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // enum
@@ -15,7 +15,7 @@ import Resources from "../../enum/Resources";
 import "./styles.css";
 
 export default function DeadCounter({ className, numberClassName }) {
-  const { userState } = useUser();
+  const { playerState } = usePlayer();
   const { languageState } = useLanguage();
 
   const tooltips = useMemo(() => {
@@ -32,7 +32,7 @@ export default function DeadCounter({ className, numberClassName }) {
         </button>
       </Tippy>
       <span className={numberClassName}>
-        {userState.user?.resources[Resources.Souls] || 0}
+        {playerState.user?.resources[Resources.Souls] || 0}
       </span>
     </div>
   );

@@ -6,7 +6,7 @@ import Dead from "../IconButtons/Souls";
 import Mana from "../IconButtons/Mana";
 
 // contexts
-import { useUser } from "../../contexts/PlayerProvider";
+import { usePlayer } from "../../contexts/PlayerProvider";
 import { useQuests } from "../../contexts/QuestsProvider";
 
 // enum
@@ -16,7 +16,7 @@ import Nations from "../../enum/Nations";
 import "./styles.css";
 
 export default function TopBar() {
-  const { userState } = useUser();
+  const { playerState } = usePlayer();
   const { questsState } = useQuests();
 
   return (
@@ -24,7 +24,7 @@ export default function TopBar() {
       <h2 className="text-xl font-bold text-white">{questsState.title}</h2>
       <div className="menu flex items-center justify-start"></div>
       <div className="resources gap-3 flex items-center justify-end">
-        {userState.user?.nation === Nations.AthensGal ? (
+        {playerState.user?.nation === Nations.AthensGal ? (
           <>
             <Dead
               numberClassName="text-white"
