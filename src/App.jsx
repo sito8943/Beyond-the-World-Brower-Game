@@ -38,14 +38,15 @@ function App() {
         lang: /* getUserLanguage(config.language) */ "es",
       });
       // just for test
-      localStorage.setItem(
+      /* localStorage.setItem(
         config.localUser,
         JSON.stringify({
           id: "5047f5b4-750f-4aeb-80d8-4dabdd9cbfeb",
           user: "Sito",
         })
-      );
+      ); */
       const localUser = getUser();
+      console.log(localUser);
       if (localUser.id) setUserState({ type: "logged-in", user: localUser });
     } catch (err) {
       console.error(err);

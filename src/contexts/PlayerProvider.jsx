@@ -20,6 +20,11 @@ const playerReducer = (playerState, action) => {
       return newPlayer;
       break;
     }
+    case "init": {
+      const { player } = action;
+      const { name, nation } = player;
+      return { player: { name, nation, resources: {} } };
+    }
     case "logged-out":
       return {};
     case "logged-in": {

@@ -1,6 +1,7 @@
 import config from "../config";
 
 export const updateUser = (userObj) => {
+  localStorage.removeItem(config.localUser);
   localStorage.setItem(config.localUser, JSON.stringify(userObj));
 };
 

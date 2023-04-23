@@ -29,6 +29,9 @@ module.exports = {
       borderRadius: {
         circle: "100%",
       },
+      zIndex: {
+        90: "90",
+      },
     },
   },
   plugins: [],

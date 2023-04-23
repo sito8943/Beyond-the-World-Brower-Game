@@ -11,6 +11,10 @@ const UserContext = createContext();
 const userReducer = (userState, action) => {
   const { type } = action;
   switch (type) {
+    case "set": {
+      const { value } = action;
+      return { user: { ...value } };
+    }
     case "logged-out":
       return {};
     case "logged-in": {

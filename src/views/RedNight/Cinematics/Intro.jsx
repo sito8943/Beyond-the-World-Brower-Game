@@ -8,11 +8,11 @@ import { useLanguage } from "../../../contexts/LanguageProvider";
 // components
 import Dialog from "../../../components/Dialog/Dialog";
 
-function Intro() {
+function Intro({ trail, remoteDialog }) {
   const { languageState } = useLanguage();
   const chapterCinematic = useMemo(() => db.chapters[0].cinematic, [db]);
 
-  const [currentDialog, setCurrentDialog] = useState(0);
+  const [currentDialog, setCurrentDialog] = useState(remoteDialog);
 
   return (
     <div>
@@ -26,10 +26,14 @@ function Intro() {
           }
           action={{
             icon: "next",
-            event: () =>
+            event: () => {
+              trail({
+                cinematic: chapterCinematic.intro.messages[currentDialog].next,
+              });
               setCurrentDialog(
                 chapterCinematic.intro.messages[currentDialog].next
-              ),
+              );
+            },
           }}
         />
       ) : null}

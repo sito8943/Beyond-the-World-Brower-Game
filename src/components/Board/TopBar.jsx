@@ -24,7 +24,7 @@ export default function TopBar() {
       <h2 className="text-xl font-bold text-white">{questsState.title}</h2>
       <div className="menu flex items-center justify-start"></div>
       <div className="resources gap-3 flex items-center justify-end">
-        {playerState.user?.nation === Nations.AthensGal ? (
+        {playerState.player?.nation === Nations.AthensGal ? (
           <>
             <Dead
               numberClassName="text-white"
