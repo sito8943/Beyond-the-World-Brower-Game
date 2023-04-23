@@ -6,7 +6,7 @@ import Dead from "../IconButtons/Souls";
 import Mana from "../IconButtons/Mana";
 
 // contexts
-import { useUser } from "../../contexts/UserProvider";
+import { useUser } from "../../contexts/PlayerProvider";
 import { useQuests } from "../../contexts/QuestsProvider";
 
 // enum

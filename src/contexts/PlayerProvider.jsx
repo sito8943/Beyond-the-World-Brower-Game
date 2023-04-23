@@ -11,6 +11,15 @@ const UserContext = createContext();
 const userReducer = (userState, action) => {
   const { type } = action;
   switch (type) {
+    case "set-resource": {
+      const { resourceId, value } = action;
+      const newUser = { ...userState };
+      newUser.resources[resourceId] = newUser.resources[resourceId]
+        ? newUser.resources[resourceId] + value
+        : value;
+      return newUser;
+      break;
+    }
     case "logged-out":
       return {};
     case "logged-in": {
@@ -24,10 +33,7 @@ const userReducer = (userState, action) => {
 
 const UserProvider = ({ children }) => {
   const [userState, setUserState] = useReducer(userReducer, {
-    user: {
-      id: "5047f5b4-750f-4aeb-80d8-4dabdd9cbfeb",
-      user: "Sito",
-    },
+    user: { id: "sito", nation: Nations.AthensGal, resources: {} },
   });
 
   const value = { userState, setUserState };

@@ -11,3 +11,17 @@ export const parseImageKit = (url, quality = "80", width = "", height = "") => {
     result += `/${slashSplitter[i]}`;
   return result;
 };
+
+/**
+ *
+ * @param {string} queries
+ */
+export const parseQueries = (queries) => {
+  const toReturn = {};
+  const queryParams = queries.substring(1).split("&");
+  queryParams.forEach((item) => {
+    const [param, value] = item.split("=");
+    toReturn[param] = value;
+  });
+  return toReturn;
+};

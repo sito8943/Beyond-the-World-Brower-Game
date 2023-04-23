@@ -5,7 +5,7 @@ import Tippy from "@tippyjs/react";
 import { GiMoneyStack } from "react-icons/gi";
 
 // contexts
-import { useUser } from "../../contexts/UserProvider";
+import { useUser } from "../../contexts/PlayerProvider";
 import { useLanguage } from "../../contexts/LanguageProvider";
 
 // enum
