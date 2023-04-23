@@ -3,7 +3,12 @@
   @apply bg-dark-primary rounded-2xl fixed bottom-5;
 }
 
+.show-off {
+  transform: translateX(-270px);
+}
+
 .quests {
+  transition: all 500ms ease;
   width: 300px;
   height: 300px;
   top: 3.8rem;

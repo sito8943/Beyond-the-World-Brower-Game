@@ -7,6 +7,7 @@ import Mana from "../IconButtons/Mana";
 
 // contexts
 import { useUser } from "../../contexts/UserProvider";
+import { useQuests } from "../../contexts/QuestsProvider";
 
 // enum
 import Nations from "../../enum/Nations";
@@ -16,9 +17,11 @@ import "./styles.css";
 
 export default function TopBar() {
   const { userState } = useUser();
+  const { questsState } = useQuests();
 
   return (
-    <div className="w-full px-2 flex top-bar items-center justify-between bg-light-primary">
+    <div className="w-full px-4 flex top-bar items-center justify-between bg-light-primary">
+      <h2 className="text-xl font-bold text-white">{questsState.title}</h2>
       <div className="menu flex items-center justify-start"></div>
       <div className="resources gap-3 flex items-center justify-end">
         {userState.user?.nation === Nations.AthensGal ? (

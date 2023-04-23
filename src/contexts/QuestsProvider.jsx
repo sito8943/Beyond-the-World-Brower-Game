@@ -17,8 +17,8 @@ const questsReducer = (questsState, action) => {
       return { ...questsState };
     }
     case "init": {
-      const { value } = action;
-      return { quests: value };
+      const { value, title } = action;
+      return { quests: value, title };
     }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
@@ -27,6 +27,7 @@ const questsReducer = (questsState, action) => {
 
 const QuestsProvider = ({ children }) => {
   const [questsState, setQuestsState] = useReducer(questsReducer, {
+    title: "",
     quests: [],
   });
 

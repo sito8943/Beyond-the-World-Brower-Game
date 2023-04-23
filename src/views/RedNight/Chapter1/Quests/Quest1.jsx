@@ -12,12 +12,15 @@ import { useQuests } from "../../../../contexts/QuestsProvider";
 function Quest1() {
   const { questsState, setQuestsState } = useQuests();
 
-  const quests = useMemo(() => db.chapters[0].quests[0], [db]);
+  const { title, quests } = useMemo(() => {
+    return { quests: db.chapters[0].quests[0], title: db.chapters[0].title };
+  }, [db]);
 
   useEffect(() => {
     setQuestsState({
       type: "init",
       value: quests,
+      title,
     });
   }, []);
 
