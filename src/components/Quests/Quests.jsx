@@ -14,7 +14,12 @@ function Quests({ quests }) {
   );
 
   function stateClassName(state) {
+    console.log(state);
     switch (state) {
+      case "undiscovered":
+        return "quest-undiscovered";
+      case "failed":
+        return "quest-failed";
       case "completed":
         return "quest-completed";
       default: // discovered
@@ -28,7 +33,7 @@ function Quests({ quests }) {
         <h4 className="text-lg">{questDialog.title}</h4>
         {quests.map((item) => (
           <p key={item.id} className={stateClassName(item.state)}>
-            {item.label}
+            {item.label[languageState.lang]}
           </p>
         ))}
       </div>

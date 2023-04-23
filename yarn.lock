@@ -1274,6 +1274,11 @@ semver@^6.3.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
 
+some-javascript-utils@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/some-javascript-utils/-/some-javascript-utils-0.7.1.tgz#a6e176952c00d199b477e2a9aebbd60585eaf3d6"
+  integrity sha512-JC7bX1xn6kEvPQuh8IfHjhaCjDRGjZoKxNatMz0cRYwhN6JWWi3Mrz2Owj259iacqHxKB8j/+4rNepdAGiCSew==
+
 source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"

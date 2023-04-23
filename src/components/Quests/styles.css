@@ -3,13 +3,6 @@
   @apply bg-dark-primary rounded-2xl fixed bottom-5;
 }
 
-.message {
-  width: 500px;
-  height: 150px;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
 .quests {
   width: 300px;
   height: 300px;
@@ -22,23 +15,6 @@
   gap: 15px;
 }
 
-.diag-content {
-  display: flex;
-  @apply w-full h-full relative p-5 gap-5;
-}
-
-.diag-portrait {
-  border-radius: 15px;
-  height: 100%;
-  min-width: 100px;
-}
-
-.diag-portrait img {
-  border-radius: 15px;
-  height: 100%;
-  min-width: 100px;
-}
-
 .content {
   @apply flex-1;
 }
@@ -48,7 +24,15 @@
 }
 
 .quest-completed {
-  @apply line-through !text-disabled;
+  @apply italic line-through !text-success;
+}
+
+.quest-undiscovered {
+  display: none;
+}
+
+.quest-failed {
+  @apply line-through italic !text-error;
 }
 
 .diag-content p,

@@ -11,6 +11,11 @@ const QuestsContext = createContext();
 const questsReducer = (questsState, action) => {
   const { type } = action;
   switch (type) {
+    case "set-to": {
+      const { newState, index } = action;
+      questsState[index].state = newState;
+      return { ...questsState };
+    }
     case "init": {
       const { value } = action;
       return { quests: value };
